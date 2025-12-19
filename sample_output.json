@@ -1,0 +1,86 @@
+{
+  "status": "success",
+  "video_info": {
+    "resolution": "1920x1080",
+    "fps": 30,
+    "total_frames": 900,
+    "processed_frames": 300,
+    "frame_skip": 3
+  },
+  "counts": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "bird_count": 12,
+      "avg_weight_index": 15432.5,
+      "bird_count_smoothed": 12
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.1,
+      "bird_count": 13,
+      "avg_weight_index": 15890.3,
+      "bird_count_smoothed": 12
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.2,
+      "bird_count": 11,
+      "avg_weight_index": 15123.7,
+      "bird_count_smoothed": 12
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.3,
+      "bird_count": 12,
+      "avg_weight_index": 15567.2,
+      "bird_count_smoothed": 12
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.4,
+      "bird_count": 14,
+      "avg_weight_index": 16234.8,
+      "bird_count_smoothed": 13
+    }
+  ],
+  "tracks_sample": {
+    "track_1": {
+      "bbox": [120.5, 340.2, 180.3, 410.8],
+      "avg_weight_index": 14230.4
+    },
+    "track_2": {
+      "bbox": [450.8, 280.5, 510.2, 350.9],
+      "avg_weight_index": 15890.7
+    },
+    "track_3": {
+      "bbox": [780.3, 390.1, 840.7, 460.5],
+      "avg_weight_index": 13567.2
+    },
+    "track_4": {
+      "bbox": [1100.2, 250.8, 1160.5, 320.3],
+      "avg_weight_index": 16123.9
+    },
+    "track_5": {
+      "bbox": [1450.7, 420.3, 1510.9, 490.7],
+      "avg_weight_index": 14890.5
+    }
+  },
+  "weight_estimates": {
+    "unit": "index (requires calibration for grams)",
+    "aggregate_mean": 15123.45,
+    "aggregate_std": 2341.23,
+    "calibration_note": "To convert to grams: weight_grams = k * weight_index, where k is calibration constant from manual weighing of 5-10 birds. Example: if a bird with weight_index=15000 weighs 2000g, then k=0.133 and all weights can be converted using weight_grams = 0.133 * weight_index"
+  },
+  "artifacts": {
+    "annotated_video": "annotated_20241218_103000.mp4"
+  },
+  "methodology": {
+    "detection": "YOLOv8n with confidence threshold 0.25",
+    "tracking": "ByteTrack-inspired IoU matching with 60-frame memory",
+    "occlusion_handling": "Track persistence for 60 frames without detection",
+    "count_smoothing": "5-frame moving average filter",
+    "weight_estimation": "Bounding box area with power-law scaling (area^1.5)",
+    "border_filtering": "Excludes detections within 5px of frame edge"
+  }
+}
