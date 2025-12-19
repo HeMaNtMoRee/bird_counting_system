@@ -258,34 +258,6 @@ def smooth_counts(counts, window_size=5):
 
 ---
 
-## 📦 Submission Package
-
-### ZIP Contents Checklist
-
-```
-✓ main.py
-✓ test_api.py
-✓ requirements.txt
-✓ README.md
-✓ IMPLEMENTATION_DETAILS.md
-✓ PROJECT_STRUCTURE.md
-✓ setup.sh
-✓ setup.bat
-✓ sample_output.json
-✓ output/ (empty folder)
-```
-
-### Optional Additions
-
-```
-□ sample_video.mp4           (test video)
-□ annotated_demo.mp4         (processed output example)
-□ test_result.json           (actual API response)
-□ screenshots/               (dashboard images)
-```
-
----
-
 ## 🛠️ Development Workflow
 
 ### Adding New Features
